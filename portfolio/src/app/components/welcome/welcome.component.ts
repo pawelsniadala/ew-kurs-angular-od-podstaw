@@ -12,6 +12,8 @@ export class WelcomeComponent {
         isSubscrined: true
     }
 
+    askAboutName = false
+
     askIfSubscribed() {
         return this.user.isSubscrined
             ? 'You are subscribed'

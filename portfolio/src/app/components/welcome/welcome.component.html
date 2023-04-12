@@ -1,8 +1,14 @@
 <p>welcome <strong>{{ user.firstName.toLocaleUpperCase() }}</strong>!</p>
-<p>
-    <!-- {{ user.isSubscrined
-        ? 'You are subscribed'
-        : 'Want to get updates ' + user.firstName + '?'
-    }} -->
-    {{ askIfSubscribed() }}
-</p>
+<div
+    [title]="user.firstName"
+    [hidden]="askAboutName"
+    [attr.data-isSubscrined]="user.isSubscrined"
+    role="presentation"
+>
+    <input
+        type="text"
+        [value]="user.firstName"
+        class="test-class"
+    >
+</div>
+<p>{{ askIfSubscribed() }}</p>
