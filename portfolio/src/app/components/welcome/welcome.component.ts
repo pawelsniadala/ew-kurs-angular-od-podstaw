@@ -12,11 +12,15 @@ export class WelcomeComponent {
         isSubscrined: true
     }
 
-    askAboutName = false
+    askAboutName = true
 
     askIfSubscribed() {
         return this.user.isSubscrined
             ? 'You are subscribed'
             : 'Want to get updates ' + this.user.firstName + '?';
+    }
+
+    changeFirstName(firstNameRef: HTMLInputElement) {
+        this.user.firstName = firstNameRef.value;
     }
 }
