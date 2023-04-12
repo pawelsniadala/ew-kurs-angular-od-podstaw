@@ -1,1 +1,8 @@
-<p>welcome works!</p>
+<p>welcome <strong>{{ user.firstName.toLocaleUpperCase() }}</strong>!</p>
+<p>
+    <!-- {{ user.isSubscrined
+        ? 'You are subscribed'
+        : 'Want to get updates ' + user.firstName + '?'
+    }} -->
+    {{ askIfSubscribed() }}
+</p>
