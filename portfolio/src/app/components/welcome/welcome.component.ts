@@ -9,10 +9,13 @@ import { Component } from '@angular/core';
 export class WelcomeComponent {
     user = {
         firstName: 'Handsome Jack',
-        isSubscrined: true
+        isSubscrined: true,
+        birthday: new Date(1970,1,1)
     }
 
     askAboutName = true
+
+    dateFormat = 'mediumDate'
 
     askIfSubscribed() {
         return this.user.isSubscrined

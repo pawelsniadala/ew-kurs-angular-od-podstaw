@@ -1,9 +1,12 @@
-<p>welcome <strong>{{ user.firstName.toLocaleUpperCase() }}</strong>!</p>
+<pre>{{ user | json }}</pre>
+<p>welcome <strong>{{ user.firstName | uppercase }}</strong>!</p>
+<p>{{ user.birthday | date: dateFormat }}</p>
 <div
     [title]="user.firstName"
     [hidden]="!askAboutName"
     [attr.data-isSubscrined]="user.isSubscrined"
     role="presentation"
+    style="text-align:center"
 >
     <input
         #firstNameRef
@@ -13,10 +16,5 @@
         (input)="user.firstName = $any($event.target).value"
     >
     <p>{{ 170 - user.firstName.length }} / 170</p>
-    <!-- <button
-        (click)="changeFirstName(firstNameRef)"
-    >
-        Change name
-    </button> -->
 </div>
 <p>{{ askIfSubscribed() }}</p>
