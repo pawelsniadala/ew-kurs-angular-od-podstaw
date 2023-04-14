@@ -49,7 +49,7 @@ export class WelcomeComponent implements OnInit {
     steps = {
         showWelcome: false,
         askForFirstName: true,
-        askForEmail: false,
+        askForEmail: true,
         askToSubscribe: false,
         subscribedSuccess: false
     }
@@ -68,6 +68,10 @@ export class WelcomeComponent implements OnInit {
                 this.steps.askToSubscribe = true;
             }, 1500);
         }
+    }
+
+    updateEmail(email: string) {
+        this.user.email = email;
     }
 
     agreedToSubscribe() {
