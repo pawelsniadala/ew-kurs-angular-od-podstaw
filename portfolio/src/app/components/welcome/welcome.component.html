@@ -23,8 +23,12 @@
     [class.animated]="steps.askToSubscribe"
 >
     Would you like to subscribe to our awesome newsletter?
-    <button (click)="agreedToSubscribe()">Yes</button>
-    <button disabled>No</button>
+    <button (click)="agreedToSubscribe()">
+        Yes
+    </button>
+    <button disabled>
+        No
+    </button>
 </p>
 <p class="slideIn"
     [class.animated]="steps.askForEmail"
@@ -43,10 +47,9 @@
         Click here!
     </button>
 </p>
-
-<div class="slideIn" [class.animated]="steps.subscribedSuccess"
+<div class="slideIn"
+    [class.animated]="steps.subscribedSuccess"
 >
     <h1>You are all set up now!</h1>
     <p>Check your mailbox for loads of awesome stuff!</p>
 </div>
-<!-- [class]="user.email.length < 3 ? 'invalid' : 'valid'" -->
