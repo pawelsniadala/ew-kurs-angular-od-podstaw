@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
             >
             <app-welcome
                 [user]="anonym"
-                (userSubscribed)="subscribed($event)"
+                (userSubscribed)="user = $event"
             >
             </app-welcome>
             <app-welcome
@@ -48,8 +48,8 @@ export class AppComponent {
         email: ''
     }
 
-    subscribed(user: any) {
-        console.log(user);
-        this.user = user;
-    }
+    // subscribed(user: any) {
+    //     console.log(user);
+    //     this.user = user;
+    // }
 }
