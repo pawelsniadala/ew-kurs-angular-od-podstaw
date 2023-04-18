@@ -12,11 +12,11 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure minus hic ducimus nulla eveniet iusto consequuntur reiciendis est odit dicta earum magni!</p>
       <a href="#"
         [hidden]="readmore"
-        (click)="readmore = true"
+        (click)="readmore = !readmore"
       >
         Read more
       </a>
-      <p [hidden]="!readmore">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, similique? Sequi dolorum, cumque iste vel dolorem enim quas incidunt. Unde cumque odio quam natus rem consectetur asperiores cum veniam aspernatur.</p>
+      <p *ngIf="readmore">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, similique? Sequi dolorum, cumque iste vel dolorem enim quas incidunt. Unde cumque odio quam natus rem consectetur asperiores cum veniam aspernatur.</p>
     </div>
     <div class="col">
       <app-progressbar
@@ -43,3 +43,7 @@
     </div>
   </div>
 </div>
+
+<!-- <ng-template ngIf="readmore">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, similique? Sequi dolorum, cumque iste vel dolorem enim quas incidunt. Unde cumque odio quam natus rem consectetur asperiores cum veniam aspernatur.</p>
+</ng-template> -->

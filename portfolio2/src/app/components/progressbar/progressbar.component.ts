@@ -1,8 +1,7 @@
 import {
   Attribute,
   Component,
-  Input,
-  Output
+  Input
 } from '@angular/core';
 
 @Component({
