@@ -60,3 +60,53 @@
     <footer class="blockquote-footer  text-white">Someone famous</footer>
   </blockquote>
 </app-herobar>
+<div class="container">
+  <h2 class="mt-4 text-center ">My Recent projects</h2>
+  <hr>
+  <div class="row py-4">
+
+      <div class="col"
+        *ngFor="
+          let project of recentProject;
+          let isLast = last;
+          let isFirst = first;
+          index as i
+        "
+        [ngClass]="{
+          firstProject: isLast === true,
+          lastProject: isFirst === true
+        }"
+      >
+        <div class="card">
+          <img class="img-fluid" [src]="project.image">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ i + 1 }}. {{ project.name }}</h5>
+            <button class="btn btn-link">Read more</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- <div class="text-center pb-5 display-3">
+    <a href="javascript:;" class="btn btn-link">&raquo; Show more projects &laquo;</a>
+  </div> -->
+</div>
+
+
+
+<!-- <ng-template
+ngFor
+let-project="$implicit"
+[ngForOf]="recentProject"
+let-last="last"
+let-first="first"
+>
+<div class="col">
+  <div class="card">
+    <img class="img-fluid" [src]="project.image">
+    <div class="card-body text-center">
+      <h5 class="card-title">{{ project.name }}</h5>
+      <button class="btn btn-link">Read more</button>
+    </div>
+  </div>
+</div>
+</ng-template> -->
