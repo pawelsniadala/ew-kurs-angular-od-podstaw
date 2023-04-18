@@ -1,1 +1,45 @@
 <app-navbar></app-navbar>
+<app-herobar class="main-header">
+  <app-herobar>
+    <h2 class="display-3">Angular Agency</h2>
+    <h4 class="pt-4">Hi, I am Matt! I am a Angular developer</h4>
+    <h4 class="pt-4">Welcome to my Web Portfolio</h4>
+  </app-herobar>
+</app-herobar>
+<div class="container">
+  <div class="row py-4">
+    <div class="col">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure minus hic ducimus nulla eveniet iusto consequuntur reiciendis est odit dicta earum magni!</p>
+      <a href="#"
+        [hidden]="readmore"
+        (click)="readmore = true"
+      >
+        Read more
+      </a>
+      <p [hidden]="!readmore">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, similique? Sequi dolorum, cumque iste vel dolorem enim quas incidunt. Unde cumque odio quam natus rem consectetur asperiores cum veniam aspernatur.</p>
+    </div>
+    <div class="col">
+      <app-progressbar
+        label="Angular"
+        value="25"
+        striped
+        status="danger"
+      >
+      </app-progressbar>
+      <app-progressbar
+        label="CSS"
+        value="50"
+        striped
+        status="info"
+      >
+      </app-progressbar>
+      <app-progressbar
+        label="HTML"
+        value="75"
+        striped
+        status="success"
+      >
+      </app-progressbar>
+    </div>
+  </div>
+</div>
