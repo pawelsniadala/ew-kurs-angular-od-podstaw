@@ -1,49 +1,62 @@
 <app-navbar></app-navbar>
 <app-herobar class="main-header">
-  <app-herobar>
-    <h2 class="display-3">Angular Agency</h2>
-    <h4 class="pt-4">Hi, I am Matt! I am a Angular developer</h4>
-    <h4 class="pt-4">Welcome to my Web Portfolio</h4>
-  </app-herobar>
+  <h2 class="display-3">Angular Agency</h2>
+  <h4 class="pt-4">Hi, I am Matt! I am a Angular developer</h4>
+  <h4 class="pt-4">Welcome to my Web Portfolio</h4>
 </app-herobar>
 <div class="container">
+  <h2 class="mt-4">Who Am I?</h2>
+  <hr>
   <div class="row py-4">
     <div class="col">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure minus hic ducimus nulla eveniet iusto consequuntur reiciendis est odit dicta earum magni!</p>
-      <a href="#"
-        [hidden]="readmore"
-        (click)="readmore = !readmore"
-      >
-        Read more
-      </a>
-      <p *ngIf="readmore">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, similique? Sequi dolorum, cumque iste vel dolorem enim quas incidunt. Unde cumque odio quam natus rem consectetur asperiores cum veniam aspernatur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quae ut error tempore veritatis iste autem velit alias debitis vitae delectus quasi nihil atque voluptatem corrupti iusto eum, blanditiis illum.</p>
+      <a href="#" [hidden]="readmore" (click)="readmore = !readmore">Read more</a>
+      <p *ngIf="readmore">Nostrum illo assumenda modi, beatae voluptate repellendus repellat sed impedit corporis vitae asperiores corrupti praesentium adipisci harum similique maxime aut quibusdam quaerat libero molestiae officiis ullam eaque. Laudantium, facere quidem.</p>
     </div>
     <div class="col">
-      <app-progressbar
-        label="Angular"
-        value="25"
-        striped
-        status="danger"
-      >
-      </app-progressbar>
-      <app-progressbar
-        label="CSS"
-        value="50"
-        striped
-        status="info"
-      >
-      </app-progressbar>
-      <app-progressbar
-        label="HTML"
-        value="75"
-        striped
-        status="success"
-      >
-      </app-progressbar>
+      <app-progressbar value="25" label="Angular" status="danger" striped></app-progressbar>
+      <app-progressbar value="50" label="CSS"  status="info" striped></app-progressbar>
+      <app-progressbar value="75" label="HTML"  status="success" striped></app-progressbar>
     </div>
   </div>
 </div>
-
-<!-- <ng-template ngIf="readmore">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, similique? Sequi dolorum, cumque iste vel dolorem enim quas incidunt. Unde cumque odio quam natus rem consectetur asperiores cum veniam aspernatur.</p>
-</ng-template> -->
+<div class="container">
+  <h2 class="mt-4">What I do</h2>
+  <hr>
+  <div class="row py-4">
+    <div class="col-md-6 col-12 p2">
+      <div class="nav flex-column nav-pills text-lg-right">
+        <a href="javascript:" class="nav-link" (click)="currentTab = 'marketing'">Marketing and sales langing pages </a>
+        <a href="javascript:" class="nav-link" (click)="currentTab = 'mobile'">Mobile Applications </a>
+        <a href="javascript:" class="nav-link" (click)="currentTab = 'websites'">Websites with CMS</a>
+        <a href="javascript:" class="nav-link" (click)="currentTab = 'web'">Web Applications </a>
+      </div>
+    </div>
+    <div class="col-md-6 col-12 pb-2 order-first order-lg-last">
+      <div class="d-flex flex-column h-100" [ngSwitch]="currentTab">
+        <div class="my-auto" *ngSwitchDefault>
+          <h3>I offer a variety of quality services</h3>
+          <p>&laquo; Please select option to learn more</p>
+        </div>
+        <div *ngSwitchCase="'marketing'">
+          <p><strong>Marketing and sales langing pages</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quaerat assumenda! Dolorem, accusantium. Eaque ipsa veniam ducimus nisi animi perferendis ex sint dolor impedit, dolores ullam eius, mollitia accusantium corrupti.</p>
+        </div>
+        <div *ngSwitchCase="'mobile'">
+          <p><strong>Mobile Applications</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quaerat assumenda! Dolorem, accusantium. Eaque ipsa veniam ducimus nisi animi perferendis ex sint dolor impedit, dolores ullam eius, mollitia accusantium corrupti.</p>
+        </div>
+        <div *ngSwitchCase="'websites'">
+          <p><strong>Websites with CMS</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quaerat assumenda! Dolorem, accusantium. Eaque ipsa veniam ducimus nisi animi perferendis ex sint dolor impedit, dolores ullam eius, mollitia accusantium corrupti.</p>
+        </div>
+        <div *ngSwitchCase="'web'">
+          <p><strong>Web Applications</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quaerat assumenda! Dolorem, accusantium. Eaque ipsa veniam ducimus nisi animi perferendis ex sint dolor impedit, dolores ullam eius, mollitia accusantium corrupti.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-herobar>
+  <blockquote class="blockquote text-white">
+    <h4>"Such a quote... much motivational"</h4>
+    <footer class="blockquote-footer  text-white">Someone famous</footer>
+  </blockquote>
+</app-herobar>

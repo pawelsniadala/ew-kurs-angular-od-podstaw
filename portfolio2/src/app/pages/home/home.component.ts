@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
-  readmore = false;
+  readmore: boolean = false;
+  currentTab: string = '';
 }
