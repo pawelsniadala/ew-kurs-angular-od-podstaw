@@ -15,8 +15,8 @@
     </div>
     <div class="col">
       <app-progressbar value="25" label="Angular" status="danger" striped></app-progressbar>
-      <app-progressbar value="50" label="CSS"  status="info" striped></app-progressbar>
-      <app-progressbar value="75" label="HTML"  status="success" striped></app-progressbar>
+      <app-progressbar value="50" label="CSS" status="info" striped></app-progressbar>
+      <app-progressbar value="75" label="HTML" status="success" striped></app-progressbar>
     </div>
   </div>
 </div>
@@ -90,8 +90,43 @@
     <a href="javascript:;" class="btn btn-link">&raquo; Show more projects &laquo;</a>
   </div> -->
 </div>
-
-
+<div class="container">
+  <h2 class="mt-4 text-center">What My Clients Say</h2>
+  <hr>
+  <div class="row py-4">
+    <div class="col py-2 px-4">
+      <app-testimonial
+        *ngFor="let testimonial of testimonials"
+      >
+        <app-avatar
+          ngProjectAs="avatar"
+          [image]="testimonial.avatar">
+        </app-avatar>
+        <app-rating
+          ngProjectAs="rating"
+          [rating]="testimonial.rating">
+        </app-rating>
+        <h4 ngProjectAs="title">
+          {{ testimonial.title }}
+        </h4>
+        <div>{{ testimonial.content }}</div>
+        <span ngProjectAs="author">
+          {{ testimonial.author }}
+        </span>
+      </app-testimonial>
+    </div>
+  </div>
+</div>
+<footer class="bg-dark text-light">
+  <div class="container">
+    <div class="row py-4">
+      <div class="col">
+        <h3>Angular Agency Website</h3>
+        <p>Copyright Eduweb</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <!-- <ng-template
 ngFor
