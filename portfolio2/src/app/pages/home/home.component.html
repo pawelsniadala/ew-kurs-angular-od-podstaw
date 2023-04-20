@@ -54,6 +54,46 @@
     </div>
   </div>
 </div>
+<!-- My experience -->
+<div class="container">
+  <div class="row py-4">
+    <div class="col-md-6 col-12 p-2">
+      <h3>My experience</h3>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora nesciunt cum accusamus
+      praesentium quos, dolore dicta animi deserunt doloribus neque ex iusto esse assumenda excepturi vitae aut nihil
+      quidem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora nesciunt cum accusamus
+      praesentium quos, dolore dicta animi deserunt doloribus neque ex iusto esse assumenda excepturi vitae aut nihil
+      quidem
+    </div>
+    <div class="col-md-6 col-12 p-2">
+      <h3>My skills</h3>
+      <p>
+        Dolor tempora nesciunt cum accusamus praesentium quos, dolore dicta animi deserunt doloribus neque ex iusto esse
+        assumenda excepturi vitae aut nihil
+        quidem</p>
+      <ul>
+        <li>
+          Odit veritatis harum veniam magni accusamus laborum laudantium dolorum tempore ullam esse sequi
+          dicta ab
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </li>
+        <li> Odio, vero! </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--  My Work In Numbers-->
+<div class="container">
+  <h2 class="mt-4 text-center">My Work In Numbers</h2>
+  <hr>
+  <div class="d-flex flex-column flex-md-row justify-content-around pb-5">
+    <app-counter [value]="100" label="Clients"></app-counter>
+    <app-counter [value]="1000" label="Coffes"></app-counter>
+    <app-counter [value]="1100" label="Lines of Code"></app-counter>
+  </div>
+</div>
 <app-herobar>
   <blockquote class="blockquote text-white">
     <h4>"Such a quote... much motivational"</h4>
@@ -64,27 +104,26 @@
   <h2 class="mt-4 text-center ">My Recent projects</h2>
   <hr>
   <div class="row py-4">
-
-      <div class="col"
-        *ngFor="
-          let project of recentProject;
-          let isLast = last;
-          let isFirst = first;
-          index as i
-        "
-        [ngClass]="{
-          firstProject: isLast === true,
-          lastProject: isFirst === true
-        }"
-      >
-        <div class="card">
-          <img class="img-fluid" [src]="project.image">
-          <div class="card-body text-center">
-            <h5 class="card-title">{{ i + 1 }}. {{ project.name }}</h5>
-            <button class="btn btn-link">Read more</button>
-          </div>
+    <div class="col"
+      *ngFor="
+        let project of recentProject;
+        let isLast = last;
+        let isFirst = first;
+        index as i
+      "
+      [ngClass]="{
+        firstProject: isLast === true,
+        lastProject: isFirst === true
+      }"
+    >
+      <div class="card">
+        <img class="img-fluid" [src]="project.image">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ i + 1 }}. {{ project.name }}</h5>
+          <button class="btn btn-link">Read more</button>
         </div>
       </div>
+    </div>
   </div>
   <!-- <div class="text-center pb-5 display-3">
     <a href="javascript:;" class="btn btn-link">&raquo; Show more projects &laquo;</a>

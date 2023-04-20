@@ -41,7 +41,6 @@ export class HomeComponent {
       image: 'https://picsum.photos/seed/971/400/400'
     }
   ];
-
   testimonials: Testimonials[] = [
     {
       id: 1,
@@ -67,5 +66,5 @@ export class HomeComponent {
       avatar: 'https://i.imgur.com/h2E4WGw.jpg',
       rating: 4
     }
-  ]
+  ];
 }
