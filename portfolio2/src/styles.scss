@@ -1,3 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "~bootstrap/dist/css/bootstrap.css";
 @import "bootstrap/scss/bootstrap.scss";
+
+.slideIn.up {
+  transform: translateY(100%);
+}
+
+.slideIn.left {
+  transform: translateX(-100%);
+}
+.slideIn.right {
+  transform: translateX(100%);
+}
+
+.slideIn.up,
+.slideIn.left,
+.slideIn.right {
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+
+.slideIn.up.animate,
+.slideIn.left.animate,
+.slideIn.right.animate {
+  opacity: 1;
+  transform: translate(0%, 0%);
+}
