@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { SlideInDirective } from './directives/slide-in.directive';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { SlideInDirective } from './directives/slide-in.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

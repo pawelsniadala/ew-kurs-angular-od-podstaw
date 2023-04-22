@@ -15,6 +15,14 @@ interface Testimonials {
   rating: number
 }
 
+interface Contact {
+  name: string,
+  email: string,
+  agreement: boolean,
+  topic: string,
+  message: string
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -67,4 +75,15 @@ export class HomeComponent {
       rating: 4
     }
   ];
+  contactForm: Contact = {
+    name: 'Anonym',
+    email: '',
+    agreement: false,
+    topic: 'new',
+    message: ''
+  };
+
+  sendMessage() {
+    console.log(this.contactForm);
+  }
 }

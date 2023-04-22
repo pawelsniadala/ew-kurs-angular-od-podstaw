@@ -1,6 +1,5 @@
 import {
   Directive,
-  ElementRef,
   HostBinding,
   Input
 } from '@angular/core';
