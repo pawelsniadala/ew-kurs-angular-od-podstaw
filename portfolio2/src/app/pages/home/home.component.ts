@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ViewChild
+} from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 interface Project {
   id: number,
@@ -75,15 +79,48 @@ export class HomeComponent {
       rating: 4
     }
   ];
-  contactForm: Contact = {
+  contactForm = {
     name: 'Anonym',
     email: '',
     agreement: false,
-    topic: 'new',
-    message: ''
+    contens: {
+      topic: 'new',
+      message: ''
+    }
+  };
+  originalForm = {
+    name: 'Anonym',
+    email: '',
+    agreement: false,
+    contens: {
+      topic: 'new',
+      message: ''
+    }
   };
 
-  sendMessage() {
-    console.log(this.contactForm);
+  constructor() {
+    this.contactFormRef = new NgForm([], []);
+  }
+
+  @ViewChild('contactFormRef', {
+    read: NgForm,
+    static: true
+  }) contactFormRef: NgForm;
+
+  sendMessage(contactForm: NgForm) {
+    console.log(contactForm);
+  }
+
+  resetForm() {
+    this.contactForm = this.originalForm;
+    this.contactFormRef.reset(
+      this.originalForm
+    )
+  }
+
+  ngAfterViewInit(): void {
+    // Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    // Add 'implements AfterViewInit' to the class.
+    console.log("ngAfterViewInit");
   }
 }
