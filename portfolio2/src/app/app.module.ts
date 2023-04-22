@@ -15,6 +15,8 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { SlideInDirective } from './directives/slide-in.directive';
+import { FooterComponent } from './components/footer/footer.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { SlideInDirective } from './directives/slide-in.directive';
     AvatarComponent,
     RatingComponent,
     CounterComponent,
-    SlideInDirective
+    SlideInDirective,
+    FooterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

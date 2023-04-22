@@ -2,6 +2,11 @@
 // @import "~bootstrap/dist/css/bootstrap.css";
 @import "bootstrap/scss/bootstrap.scss";
 
+body {
+  overflow-x: hidden;
+  // overflow-y: hidden;
+}
+
 .slideIn.up {
   transform: translateY(100%);
 }
