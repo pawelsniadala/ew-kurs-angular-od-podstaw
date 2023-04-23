@@ -17,6 +17,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { SlideInDirective } from './directives/slide-in.directive';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     CounterComponent,
     SlideInDirective,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,

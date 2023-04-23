@@ -1,64 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  selector: 'app-project-details',
+  templateUrl: './project-details.component.html',
+  styleUrls: ['./project-details.component.scss']
 })
+export class ProjectDetailsComponent implements OnInit {
 
-export class ProjectsComponent implements OnInit {
+  project: any = [];
+  // project = null;
+
   constructor(
-    private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
+
+  // ngOnInit(): void {
+  //   this.route.paramMap.subscribe(params => {
+
+  //     this.project = this.recentProjects.find(p => {
+  //       return p.id == parseInt(params.get('project_id'))
+  //     })
+  //   })
+  // }
 
   ngOnInit(): void {
-    // const tag = this.route.snapshot.queryParamMap.get('tag');
-    // tag
-    //   ? this.selectCategoty(tag)
-    //   : this.filtered = this.recentProjects;
-    this.route.queryParamMap.subscribe(params => {
-      const tag = params.get('tag');
-      this.selectCategoty(tag);
-      // tag && this.selectCategoty(tag);
-      // if(tag) {
-      //   this.selectCategoty(tag);
-      // }
+    this.route.paramMap.subscribe(params => {
+      const project_id = params.get('project_id');
+      this.project = this.recentProjects.find(p => {
+        return p.id === parseInt(project_id ?? '');
+      })
     })
   }
-
-  categories = [
-    {
-      id: "web",
-      label: "Web & Interactive"
-    },
-    {
-      id: "animation",
-      label: "Animation"
-    },
-    {
-      id: "culture-and-education",
-      label: "Culture & Education"
-    }
-  ];
-
-  category: any = {};
-
-  navigateToCat(cat_id: any) {
-    this.router.navigate(['/projects'], {
-      queryParams: { tag: cat_id }
-    })
-  }
-
-  selectCategoty(cat_id: any) {
-    this.category = this.categories.find(c => c.id === cat_id);
-    this.category
-      ? this.filtered = this.recentProjects.filter(p => p.tags.includes(this.category.label))
-      : this.filtered = this.recentProjects;
-  }
-
-  filtered: any[] = [];
 
   recentProjects = [
     {
@@ -279,6 +252,8 @@ export class ProjectsComponent implements OnInit {
         "src": "/projects/images/5f041a739cf10731203317.jpg",
         "filename": "5f041a739cf10731203317.jpg"
       }
-    }
-  ];
+    },
+  ]
+
+
 }

@@ -1,8 +1,47 @@
 <div class="container mt-4">
-  <div class="row">
-    <div class="col">
-      <p>project</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum, eligendi fuga blanditiis sunt eius impedit ex cumque quos nihil ratione doloremque labore facilis beatae laboriosam aliquid nemo voluptates accusamus.</p>
+  <h2 class="text-center ">My Recent projects</h2>
+  <hr>
+  <div class="text-center">
+    <div
+      class="btn-group"
+      role="group"
+      aria-label="Basic mixed styles example"
+    >
+      <button
+        type="button"
+        class="btn btn-secondary"
+        [class.active]="$any(category)?.id === cat.id"
+        *ngFor="let cat of categories"
+        (click)="navigateToCat(cat.id)"
+      >
+        {{ cat.label }}
+      </button>
     </div>
   </div>
+  <div
+    class="row row-cols-md-4 py-4"
+    appWhenVisible
+    appSlideIn="up"
+  >
+    <ng-container *ngFor="let project of filtered; index as i">
+      <div class="col mb-4">
+        <div class="card">
+          <img class="img-fluid" [src]="'assets/'+project.images.thumbnail">
+          <div class="card-body text-center ">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <button
+              class="btn btn-link"
+              [routerLink]="['/project', project.id]"
+            >
+              Read more
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </div>
+
+<!-- [class.active]="category && category.id === cat.id" -->
+<!-- to samo -->
+<!-- [class.active]="category?.id === cat.id" -->
