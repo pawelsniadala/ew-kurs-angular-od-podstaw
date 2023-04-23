@@ -1,91 +1,97 @@
 <div class="container">
-
-    <h2 class="mt-4 text-center ">{{ project.title }}</h2>
+  <div class="d-flex justify-content-center mt-4"
+    *ngIf="loading"
+  >
+    <div class="spinner-border"
+      role="status"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div *ngIf="project">
+    <h2 class="mt-4 text-center">
+      {{ project.title }}
+    </h2>
     <hr>
     <div class="row">
       <div class="col">
-  
-        <div class="col mb-4" appSlideIn="left" [delay]="500">
+        <div class="col mb-4"
+          appSlideIn="left"
+          [delay]="500"
+        >
           <div class="card">
-            <img class="img-fluid" [src]="'assets/'+project.images.thumbnail">
+            <img class="img-fluid"
+              [src]="'assets/'+project.images.thumbnail"
+            >
             <div class="card-body text-center ">
-              <h5 class="card-title">{{ project.title }}</h5>
+              <h5 class="card-title">
+                {{ project.title }}
+              </h5>
             </div>
           </div>
         </div>
-  
       </div>
       <div class="col">
-  
-        <dl appSlideIn="right" [delay]="500">
+        <dl appSlideIn="right"
+          [delay]="500"
+        >
           <dt>Project Title</dt>
-          <dd>{{project.title}}</dd>
+          <dd>{{ project.title }}</dd>
           <dt>Likes</dt>
-          <dd>{{project.likes}}</dd>
+          <dd>{{ project.likes }}</dd>
           <dt>Preview link</dt>
-          <dd><a [href]="project.url" _target="blank">{{project.title}}</a></dd>
-  
+          <dd>
+            <a [href]="project.url"
+              _target="blank"
+            >
+              {{ project.title }}
+            </a>
+          </dd>
         </dl>
-  
-      </div>
-    </div>
-  
-  </div>
-  
-  <!-- My experience -->
-  <div class="container">
-    <div class="row py-4">
-      <div class="col-md-6 col-12 p-2" appSlideIn="left">
-        <h3>My experience</h3>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora nesciunt cum accusamus
-        praesentium quos, dolore dicta animi deserunt doloribus neque ex iusto esse assumenda excepturi vitae aut nihil
-        quidem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora nesciunt cum accusamus
-        praesentium quos, dolore dicta animi deserunt doloribus neque ex iusto esse assumenda excepturi vitae aut nihil
-        quidem
-      </div>
-      <div class="col-md-6 col-12 p-2" appSlideIn="right">
-        <h3>My skills</h3>
-        <p>
-          Dolor tempora nesciunt cum accusamus praesentium quos, dolore dicta animi deserunt doloribus neque ex iusto esse
-          assumenda excepturi vitae aut nihil
-          quidem</p>
-        <ul>
-          <li>
-            Odit veritatis harum veniam magni accusamus laborum laudantium dolorum tempore ullam esse sequi
-            dicta ab
-          </li>
-          <li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </li>
-          <li> Odio, vero! </li>
-        </ul>
       </div>
     </div>
   </div>
-  
-  <div class="container">
-  
-    <h3 class="mt-4 text-center ">Technologies used</h3>
-    <hr>
-  
-
-  
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="text-center pb-5 display-3">
-          <a class="btn btn-link"
-          routerLink="/projects">&raquo; Go back to projects &laquo;</a>
-        </div>
+</div>
+<div class="container"
+  *ngIf="project"
+>
+  <div class="row py-4">
+    <div class="col-md-6 col-12 p-2"
+      appSlideIn="left"
+    >
+      <h3>My experience</h3>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora nesciunt cum accusamus praesentium quos, dolore dicta animi deserunt doloribus neque ex iusto esse assumenda excepturi vitae aut nihil quidem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora nesciunt cum accusamus praesentium quos, dolore dicta animi deserunt doloribus neque ex iusto esse assumenda excepturi vitae aut nihil quidem
+    </div>
+    <div class="col-md-6 col-12 p-2" appSlideIn="right">
+      <h3>My skills</h3>
+      <p>Dolor tempora nesciunt cum accusamus praesentium quos, dolore dicta animi deserunt doloribus neque ex iusto esse assumenda excepturi vitae aut nihil quidem</p>
+      <ul>
+        <li>Odit veritatis harum veniam magni accusamus laborum laudantium dolorum tempore ullam esse sequi dicta ab</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Odio, vero!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h3 class="mt-4 text-center ">Technologies used</h3>
+  <hr>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="text-center pb-5 display-3">
+        <a class="btn btn-link"
+        routerLink="/projects">&raquo; Go back to projects &laquo;</a>
       </div>
     </div>
   </div>
+</div>
 
 
 
 
-
-  <!-- <div class="row mb-5" appWhenVisible [threshold]="1.0" #visRef="whenVisible">
+<!-- <div class="row mb-5" appWhenVisible [threshold]="1.0" #visRef="whenVisible">
     <div class="col">
       <ng-container *ngFor="let skill of (project.skills | keyvalue)">
         <ng-container *ngIf="skill.value">

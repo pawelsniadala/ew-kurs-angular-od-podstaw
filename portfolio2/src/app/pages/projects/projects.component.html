@@ -2,13 +2,11 @@
   <h2 class="text-center ">My Recent projects</h2>
   <hr>
   <div class="text-center">
-    <div
-      class="btn-group"
+    <div class="btn-group"
       role="group"
       aria-label="Basic mixed styles example"
     >
-      <button
-        type="button"
+      <button type="button"
         class="btn btn-secondary"
         [class.active]="$any(category)?.id === cat.id"
         *ngFor="let cat of categories"
@@ -18,27 +16,45 @@
       </button>
     </div>
   </div>
-  <div
-    class="row row-cols-md-4 py-4"
-    appWhenVisible
-    appSlideIn="up"
-  >
-    <ng-container *ngFor="let project of filtered; index as i">
-      <div class="col mb-4">
-        <div class="card">
-          <img class="img-fluid" [src]="'assets/'+project.images.thumbnail">
-          <div class="card-body text-center ">
-            <h5 class="card-title">{{ project.title }}</h5>
-            <button
-              class="btn btn-link"
-              [routerLink]="['/project', project.id]"
+  <div>
+    <p class="alert alert-danger"
+      *ngIf="message"
+    >
+      {{ message }}
+    </p>
+    <div class="d-flex justify-content-center mt-4"
+      *ngIf="loading"
+    >
+      <div class="spinner-border"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div class="row row-cols-md-4 py-4"
+      appWhenVisible
+      appSlideIn="up"
+    >
+      <ng-container *ngFor="let project of filtered; index as i">
+        <div class="col mb-4">
+          <div class="card">
+            <img class="img-fluid"
+              [src]="'assets/'+project.images.thumbnail"
             >
-              Read more
-            </button>
+            <div class="card-body text-center ">
+              <h5 class="card-title">
+                {{ project.title }}
+              </h5>
+              <button class="btn btn-link"
+                [routerLink]="['/project', project.id]"
+              >
+                Read more
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </ng-container>
+      </ng-container>
+    </div>
   </div>
 </div>
 
